@@ -113,7 +113,7 @@ export default withRouter(({location: {pathname}}) => {
                 <HLink to="/TV">TV 프로그램</HLink>
               </List>
               <List current={pathname === "/TV"}>
-                <HLink to="/TV">영화</HLink>
+                <HLink to="/Movie">영화</HLink>
               </List>
               <List current={pathname === "/TV"}>
                 <HLink to="/TV">최신 콘텐츠</HLink>

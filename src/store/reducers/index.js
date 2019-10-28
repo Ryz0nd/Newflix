@@ -8,8 +8,8 @@ import reducerTvTop from "./reducerTvTop";
 import reducerOriginal from "./reducerOriginal";
 
 const rootReducer = combineReducers({
-    mvLatest: reducerMvPlaying,
-    myPopular: reducerMvPopular,
+    mvPlaying: reducerMvPlaying,
+    mvPopular: reducerMvPopular,
     mvTop: reducerMvTop,
     tvAiring: reducerTvAiring,
     tvPopular: reducerTvPopular,
