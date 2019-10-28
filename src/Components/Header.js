@@ -10,13 +10,13 @@ import {LogoImg} from "./Icons";
 //   display: block;
 // `;
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.header`
   width: 100%;
   height: 41px;
   top: 0px;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 100;
   background-color: #141414;
   position: fixed;
   ${props =>
@@ -59,6 +59,7 @@ const UList = styled.ul`
     display: flex;
     list-style-type: disc;
     color: #fff;
+    align-items: center;
 `;
 
 const List = styled.li`
