@@ -140,3 +140,15 @@ export const apiMvTopRated = () => {
         })
     };
 };
+
+export const apiOriginal = () => {
+    return (dispatch) => {
+        return api.get(`discover/tv?api_key=${api_key}&with_networks=213&language=${language}`)
+        .then(response => {
+            dispatch(movieNetflixOrigin(response.data))
+        })
+        .catch(error => {
+            throw(error);
+        })
+    };
+};

@@ -112,11 +112,11 @@ export default withRouter(({location: {pathname}}) => {
               <List current={pathname === "/TV"}>
                 <HLink to="/TV">TV 프로그램</HLink>
               </List>
-              <List current={pathname === "/TV"}>
+              <List current={pathname === "/Movie"}>
                 <HLink to="/Movie">영화</HLink>
               </List>
-              <List current={pathname === "/TV"}>
-                <HLink to="/TV">최신 콘텐츠</HLink>
+              <List current={pathname === "/NewContent"}>
+                <HLink to="/NewContent">최신 콘텐츠</HLink>
               </List>
             </UList>
           )}

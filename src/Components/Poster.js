@@ -9,31 +9,36 @@ const Image = styled.div`
   background-position: center center;
 `;
 
-
 const ImageContainer = styled.div`
   position: relative;
   &:hover {
-    ${Image}{
+    ${Image} {
       transform: scale(1.3);
     }
   }
 `;
 
-const Poster = ({imageUrl}) => {
-  return(
+const Poster = ({ imageUrl }) => {
+  return (
     <ImageContainer>
-      <Image bgUrl={`https://image.tmdb.org/t/p/w300/${imageUrl}`}/>
+      <Image
+        bgUrl={
+          imageUrl
+            ? `https://image.tmdb.org/t/p/w300/${imageUrl}`
+            : require("../Assets/NoPoster.jpg")
+        }
+      />
     </ImageContainer>
-)};
+  );
+};
 
 Poster.propTypes = {
-  // id: PropTypes.number.isRequired,
   imageUrl: PropTypes.string.isRequired
-}
+};
 
 export default Poster;
 
-  /* @media screen and (max-width: 499px) {
+/* @media screen and (max-width: 499px) {
     width: 50%;
   }
   @media screen and (max-width: 799px) and (min-width: 500px) {

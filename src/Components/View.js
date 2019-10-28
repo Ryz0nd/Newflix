@@ -19,6 +19,7 @@ const Grid = styled.div`
 
 const Title = styled.span`
   font-size: 15px;
+  font-weight: 600;
 `;
 
 const View = ({ title, children }) => (
