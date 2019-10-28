@@ -1,19 +1,16 @@
 import { NETFLIX_ORIGINAL } from "../action/index";
 
 const initialState = {
-  isLoading: true,
   contents: {}
-}
+};
 
 export default function(state = initialState, action) {
   switch (action.type) {
     case NETFLIX_ORIGINAL:
-      return [
+      return {
         ...state,
-        {
-          contents: action.data
-        }
-      ];
+        contents: action.data
+      };
     default:
       return state;
   }

@@ -2,11 +2,38 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-const Container = styled.div`
-
+const Image = styled.div`
+  background-image: url(${props => props.bgUrl});
+  height: 180px;
+  background-size: cover;
+  background-position: center center;
 `;
-const Item = styled.div`
-  @media screen and (max-width: 499px) {
+
+
+const ImageContainer = styled.div`
+  position: relative;
+  &:hover {
+    ${Image}{
+      transform: scale(1.3);
+    }
+  }
+`;
+
+const Poster = ({imageUrl}) => {
+  return(
+    <ImageContainer>
+      <Image bgUrl={`https://image.tmdb.org/t/p/w300/${imageUrl}`}/>
+    </ImageContainer>
+)};
+
+Poster.propTypes = {
+  // id: PropTypes.number.isRequired,
+  imageUrl: PropTypes.string.isRequired
+}
+
+export default Poster;
+
+  /* @media screen and (max-width: 499px) {
     width: 50%;
   }
   @media screen and (max-width: 799px) and (min-width: 500px) {
@@ -20,26 +47,4 @@ const Item = styled.div`
   }
   @media screen and (min-width: 1400px) {
     width: 16.66666667%;
-  }
-  height: 300px;
-  background-image: url(${props => props.bgUrl});
-  /* box-sizing: border-box; */
-  z-index: 1;
-  display: inline-block;
-  position: relative;
-  white-space: normal;
-  vertical-align: top;
-  padding: 0 2px;
-  /* &:first-child{
-        margin-right: auto;
-        text-align:left;
-    } */
-`;
-
-const Poster = ({id, imageUrl}) => (
-    <Container>
-      <Item bgUrl={`https://image.tmdb.org/t/p/w300/${imageUrl}`}/>
-    </Container>
-);
-
-export default Poster;
+  } */

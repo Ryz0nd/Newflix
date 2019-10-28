@@ -1,17 +1,18 @@
-import { TV_LATEST } from "../action/index";
+import { MOVIE_PLAYING } from "../action/index";
 
 const initialState = {
   contents: {}
-}
+};
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case TV_LATEST:
+    case MOVIE_PLAYING:
       return {
         ...state,
-          contents: action.data
+        contents: action.data
       };
     default:
       return state;
+      
   }
 }

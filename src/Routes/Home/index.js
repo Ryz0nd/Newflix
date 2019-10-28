@@ -1,10 +1,3 @@
-import React from "react";
+import homeContainer from "./homeContainer";
 
-export default () => {
-    return (
-      <div>
-        Home
-      </div>
-    );
-
-}
+export default homeContainer;

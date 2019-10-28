@@ -1,19 +1,11 @@
 import axios from "axios";
-import { dispatch } from "rxjs/internal/observable/range";
-// import dotenv from 'dotenv';
-
-// dotenv.config();
-// console.log(process.env.api_key);
-
 //액션
-export const TV_TRENDING = 'TV_TRENDING';
 export const TV_POPULAR = 'TV_POPULAR';
 export const TV_TOP_RATED = 'TV_TOP_RATED';
-export const TV_LATEST = 'TV_LATEST';
-export const MOVIE_TRENDING ='MOVIE_TRENDING';
+export const TV_AIRING = 'TV_AIRING';
 export const MOVIE_POPULAR = 'MOVIE_POPULAR';
 export const MOVIE_TOP_RATED = 'MOVIE_TOP_RATED';
-export const MOVIE_LATEST = 'MOVIE_LATEST';
+export const MOVIE_PLAYING = 'MOVIE_PLAYING';
 export const NETFLIX_ORIGINAL = 'NETFLIX_ORIGINAL';
 
 const api_key= "d983d85126d7c980fb1c4f7b6cb34bb1";
@@ -25,12 +17,6 @@ const api = axios.create({
 
 //액션 생성 함수
 
-export const tvTrendingData = (data) => {
-    return {
-        type: TV_TRENDING,
-        data
-    };
-};
 
 export const tvPopularData = (data) => {
     return {
@@ -46,16 +32,9 @@ export const tvTopRatedData = (data) => {
     };
 };
 
-export const tvLatestData = (data) => {
+export const tvAiringData = (data) => {
     return {
-        type: TV_LATEST,
-        data
-    };
-};
-
-export const movieTrendingData = (data) => {
-    return {
-        type: MOVIE_TRENDING,
+        type: TV_AIRING,
         data
     };
 };
@@ -74,9 +53,9 @@ export const movieTopRatedData = (data) => {
     };
 };
 
-export const movieLatestData = (data) => {
+export const moviePlayingData = (data) => {
     return {
-        type: MOVIE_LATEST,
+        type: MOVIE_PLAYING,
         data
     };
 };
@@ -90,11 +69,11 @@ export const movieNetflixOrigin = (data) => {
 
 //api 호출
 //https://stackoverflow.com/questions/36367648/handling-api-calls-in-redux-with-axios
-export const apiTvLatest = () => {
+export const apiTvAiring = () => {
     return (dispatch) => {
-        return api.get(`tv/latest?api_key=${api_key}&language=${language}`)
+        return api.get(`tv/airing_today?api_key=${api_key}&language=${language}`)
         .then(response => {
-            dispatch(tvLatestData(response.data))
+            dispatch(tvAiringData(response.data))
         })
         .catch(error => {
             throw(error);
@@ -107,6 +86,54 @@ export const apiTvPopular = () => {
         return api.get(`tv/popular?api_key=${api_key}&language=${language}`)
         .then(response => {
             dispatch(tvPopularData(response.data))
+        })
+        .catch(error => {
+            throw(error);
+        })
+    };
+};
+
+export const apiTvTopRated = () => {
+    return (dispatch) => {
+        return api.get(`tv/top_rated?api_key=${api_key}&language=${language}`)
+        .then(response => {
+            dispatch(tvTopRatedData(response.data))
+        })
+        .catch(error => {
+            throw(error);
+        })
+    };
+};
+
+export const apiMvPlaying = () => {
+    return (dispatch) => {
+        return api.get(`movie/now_playing?api_key=${api_key}&language=${language}`)
+        .then(response => {
+            dispatch(moviePlayingData(response.data))
+        })
+        .catch(error => {
+            throw(error);
+        })
+    };
+};
+
+export const apiMvPopular = () => {
+    return (dispatch) => {
+        return api.get(`movie/popular?api_key=${api_key}&language=${language}`)
+        .then(response => {
+            dispatch(moviePopularData(response.data))
+        })
+        .catch(error => {
+            throw(error);
+        })
+    };
+};
+
+export const apiMvTopRated = () => {
+    return (dispatch) => {
+        return api.get(`movie/top_rated?api_key=${api_key}&language=${language}`)
+        .then(response => {
+            dispatch(movieTopRatedData(response.data))
         })
         .catch(error => {
             throw(error);

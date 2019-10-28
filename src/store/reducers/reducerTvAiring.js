@@ -1,4 +1,4 @@
-import { MOVIE_POPULAR } from "../action/index";
+import { TV_AIRING } from "../action/index";
 
 const initialState = {
   contents: {}
@@ -6,7 +6,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case MOVIE_POPULAR:
+    case TV_AIRING:
       return {
         ...state,
         contents: action.data

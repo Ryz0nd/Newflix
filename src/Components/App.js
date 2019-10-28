@@ -2,9 +2,7 @@ import React from 'react';
 import Router from './Router';
 import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
-import dotenv from "dotenv";
-require('dotenv').config();
-dotenv.config();
+import Footer from "./Footer";
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -16,6 +14,7 @@ function App() {
     <Wrapper>
       <Router />
       <GlobalStyles />
+      <Footer />
     </Wrapper>
   );
 }

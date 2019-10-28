@@ -1,17 +1,17 @@
 import {combineReducers} from "redux";
-import reducerMvLatest from "./reducerMvLatest";
+import reducerMvPlaying from "./reducerMvPlaying";
 import reducerMvPopular from "./reducerMvPopular";
 import reducerMvTop from "./reducerMvTop";
-import reducerTvLatest from "./reducerTvLatest";
+import reducerTvAiring from "./reducerTvAiring";
 import reducerTvPopular from "./reducerTvPopular";
 import reducerTvTop from "./reducerTvTop";
 import reducerOriginal from "./reducerOriginal";
 
 const rootReducer = combineReducers({
-    mvLatest: reducerMvLatest,
+    mvLatest: reducerMvPlaying,
     myPopular: reducerMvPopular,
     mvTop: reducerMvTop,
-    tvLatest: reducerTvLatest,
+    tvAiring: reducerTvAiring,
     tvPopular: reducerTvPopular,
     tvTop: reducerTvTop,
     original: reducerOriginal

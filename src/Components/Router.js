@@ -3,7 +3,7 @@ import {HashRouter as Router, Route, Switch, Redirect} from "react-router-dom";
 import Header from "./Header";
 import Home from "../Routes/Home";
 import Search from "../Routes/Search";
-import Tv from "../Routes/TV";
+import Tv from "../Routes/TV/index";
 import Detail from "../Routes/Detail";
 
 
