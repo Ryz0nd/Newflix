@@ -7,15 +7,14 @@ const Image = styled.div`
   height: 180px;
   background-size: cover;
   background-position: center center;
+  transition: all 0.3s ease-out;
+  &:hover{
+    transform: scale(1.3);
+  }
 `;
 
 const ImageContainer = styled.div`
   position: relative;
-  &:hover {
-    ${Image} {
-      transform: scale(1.3);
-    }
-  }
 `;
 
 const Poster = ({ imageUrl }) => {

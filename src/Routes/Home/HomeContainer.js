@@ -1,27 +1,36 @@
-import React, {useEffect} from "react";
-import {useSelector, useDispatch} from "react-redux";
-import {apiTvPopular} from "../../store/action/index";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import styled from "styled-components";
+import { apiOriginal } from "../../store/action/index";
 import View from "../../Components/View";
+import Home from "../../Components/Home";
 import Poster from "../../Components/Poster";
-// import {tvToprated, tvPopular, tvLatest, tvDetail, tvApi } from "../../api";
+
+const Wrapper = styled.div`
+  position: relative;
+  top: 35vw;
+  z-index: 90;
+`;
 
 export default () => {
   const dispatch = useDispatch();
-  useEffect(()=> {
-    dispatch(apiTvPopular());
+  useEffect(() => {
+    dispatch(apiOriginal());
   }, []);
-  const data = useSelector(state => state.tvPopular.contents);
-  console.log(data);
+  const originalData = useSelector(state => state.original.contents, []) || [];
 
-  return(
+  return (
     <>
-    {data.results && (
-      <View title= "인기 있는 TV 프로그램">
-        {data.results.map(tv =>(
-          <Poster key={tv.id} imageUrl ={tv.poster_path} />
-        ) )}
-      </View>
-    )}
+      <Home />
+      <Wrapper>
+        {originalData.results && (
+          <View title="넷플릭스 오리지널">
+            {originalData.results.map(mv => (
+              <Poster key={mv.id} imageUrl={mv.poster_path} />
+            ))}
+          </View>
+        )}
+      </Wrapper>
     </>
   );
-}
+};

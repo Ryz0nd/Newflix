@@ -1,14 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import { withRouter, Link } from "react-router-dom";
-import styled, { keyframes, css } from "styled-components";
+import styled, { css } from "styled-components";
 import useMediaQuery from "react-hook-media-query";
 import {LogoImg} from "./Icons";
 
-// const Header = styled.div`
-//   width: 100%;
-//   height: 70px;
-//   display: block;
-// `;
 
 const HeaderContainer = styled.header`
   width: 100%;
@@ -67,6 +62,10 @@ const List = styled.li`
   list-style-type: none;
   margin-left: 18px;
   font-size: 0.8rem;
+  transition: all 0.3s ease-in;
+  &:hover {
+    color: #999;
+  }
 `;
 
 const HLink = styled(Link)`
