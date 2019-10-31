@@ -10,7 +10,8 @@ const MainImage = styled.div`
   top: 0;
   bottom: 0;
   background-image: 
-    linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.0)),
+    linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.0)80%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.3)20%, rgba(0, 0, 0, 0.0)),
     url(${props => props.bg});
   background-size: cover;
   background-position: center center;

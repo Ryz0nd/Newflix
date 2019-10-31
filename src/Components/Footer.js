@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const Footer = styled.footer`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
-  /* text-align: center; */
   text-transform: uppercase;
   font-weight: 600;
   font-size: 12px;
