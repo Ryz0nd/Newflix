@@ -12,7 +12,6 @@ const Wrapper = styled.div`
   position: relative;
   top: 35vw;
   z-index: 90;
-  margin-bottom: 20px;
 `;
 
 export default () => {

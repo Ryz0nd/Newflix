@@ -1,9 +1,9 @@
+import { Link, withRouter } from "react-router-dom";
 import React, {useState} from "react";
-import { withRouter, Link } from "react-router-dom";
 import styled, { css } from "styled-components";
-import useMediaQuery from "react-hook-media-query";
-import {LogoImg} from "./Icons";
 
+import {LogoImg} from "./Icons";
+import useMediaQuery from "react-hook-media-query";
 
 const HeaderContainer = styled.header`
   width: 100%;
@@ -45,7 +45,8 @@ const HeaderMain = styled.div`
 
 const Logo = styled.div`
   z-index:3;
-  margin-top: 8px;
+  align-items: center;
+  justify-content: center;
 `;
 
 const UList = styled.ul`
